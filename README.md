@@ -10,6 +10,8 @@ Frankly, because it *is* old.  This is a working, compiling, and pretty bug free
 
 That said, I did have to convert all of the tabs to spaces and I nearly vomited when I saw the lack of {}'s but at the same time, it compiles, runs, and is a happy little app, so enjoy the trip down memory lane or your first look at a project that didn't have garbage collection, managed runtime, just-in-time interpretation, and often had to be mindful of string length to run under 2MB of RAM.
 
+This project was recompiled using Visual Studio 2019.
+
 ## Where can I get the compiled version?
 Click the Releases button in the header above or go to https://github.com/randyrants/multifilez/releases directly
 
