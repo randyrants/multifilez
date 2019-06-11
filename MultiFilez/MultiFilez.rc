@@ -1,0 +1,396 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MultiFilez.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\MultiFilez.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOGEX 0, 0, 209, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About MultiFilez"
+FONT 9, "Segoe UI", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,153,81,50,14
+    ICON            IDR_MAINFRAME,IDC_STATIC,4,4,20,20
+    LTEXT           "MultiFilez version 2.2",IDC_STATIC,29,5,89,8
+    LTEXT           "© 2003-2020 RandyRants LLC",IDC_STATIC,29,15,100,8
+    GROUPBOX        "License information...",IDC_STATIC,6,29,198,48
+    CTEXT           "This software is ""Donation-Ware""",IDC_VERSION,12,38,185,9,SS_SUNKEN
+    LTEXT           "You may use this software for as long as you like, free of charge - donations are gladly accepted to keep the project going. ",IDC_INFO,12,49,185,25,NOT WS_GROUP
+    LTEXT           "For donation and support information please go to: http://www.randyrants.com",IDC_REGISTERED,6,80,142,16,NOT WS_GROUP
+    PUSHBUTTON      "Register in &Explorer",IDC_REG_EXPLORER,133,7,70,14,NOT WS_VISIBLE
+END
+
+IDD_REGISTER DIALOG 0, 0, 209, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Register MultiFilez"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Enter registration code:",IDC_STATIC,12,41,75,8
+    EDITTEXT        IDC_REGNUMBER,89,38,108,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,98,64,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,153,64,50,14
+    ICON            IDR_MAINFRAME,IDC_STATIC,4,4,20,20
+    LTEXT           "Register MultiFilez",IDC_STATIC,29,5,58,8
+    GROUPBOX        "License information...",IDC_STATIC,6,29,198,30
+END
+
+IDD_REPORT DIALOGEX 0, 0, 277, 229
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "MultiFilez - Results"
+FONT 9, "Segoe UI", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,222,211,50,14
+    ICON            IDR_MAINFRAME,IDC_STATIC,4,4,20,20
+    LTEXT           "MultiFilez - Reports",IDC_STATIC,29,5,86,8
+    LTEXT           "© 2003-2020 RandyRants LLC",IDC_STATIC,29,15,137,8
+    GROUPBOX        "Results...",IDC_STATIC,6,27,266,180
+    CONTROL         "List1",IDC_RESULTS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_TABSTOP,12,38,253,162,WS_EX_CLIENTEDGE
+END
+
+IDD_MULTIFILEZ_DIALOG DIALOGEX 0, 0, 480, 312
+STYLE DS_SETFONT | DS_3DLOOK | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MultiFilez"
+MENU IDR_MAIN
+FONT 9, "Segoe UI", 400, 0, 0x0
+BEGIN
+    LTEXT           "File &types:",IDC_STATIC,3,20,32,8
+    COMBOBOX        IDC_FILTER,40,18,85,175,CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&From where:",IDC_STATIC,3,35,40,8
+    COMBOBOX        IDC_WHERE,3,45,122,148,CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use E&xplorer",IDC_EXPLORE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,3,284,56,10
+    CONTROL         "Tree2",IDC_DRIVES,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_DISABLED | WS_HSCROLL | WS_TABSTOP,3,74,122,205,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "&Add files",IDC_ADD_FILES,87,282,38,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,131,0,1,312
+    LTEXT           "Currently &selected files:",IDC_STATIC,137,2,107,8,SS_CENTERIMAGE | NOT WS_GROUP
+    CONTROL         "List1",IDC_FILES,"SysListView32",LVS_LIST | LVS_SHOWSELALWAYS | LVS_AUTOARRANGE | WS_TABSTOP,137,18,339,105,WS_EX_CLIENTEDGE
+    LTEXT           "&Criteria:",IDC_STATIC,137,126,39,8,SS_CENTERIMAGE | NOT WS_GROUP
+    COMBOBOX        IDC_DO,137,143,76,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "this",IDC_LBL_THIS,216,144,12,8
+    EDITTEXT        IDC_REPLACE,231,143,96,41,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL
+    LTEXT           "with",IDC_LBL_WITH,330,144,14,8
+    EDITTEXT        IDC_WITH,347,143,94,41,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL
+    PUSHBUTTON      "A&dd",IDC_ADD_COMMAND,444,142,32,14
+    CONTROL         "C&ommands to Perform:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE,137,186,89,8
+    PUSHBUTTON      "&Go",IDC_GO,423,282,53,14
+    LTEXT           "Select Files:",IDC_STATIC,3,2,39,8,SS_CENTERIMAGE | NOT WS_GROUP
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,3,13,122,1
+    CONTROL         "",IDC_LINE_CRITERIA,"Static",SS_ETCHEDHORZ,137,137,339,1
+    CONTROL         "",IDC_LINE_PERFORM,"Static",SS_ETCHEDHORZ,137,197,339,1
+    CONTROL         "Include Su&bdirectories",IDC_SUBS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,3,61,86,10
+    CONTROL         "",IDC_LINE_FILES,"Static",SS_ETCHEDHORZ,137,13,339,1
+    CONTROL         "List1",IDC_COMMANDS,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_AUTOARRANGE | LVS_NOCOLUMNHEADER | WS_TABSTOP,137,202,304,77,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Cance&l",IDC_CLICKCANCEL,137,282,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "&Up",IDC_UP,444,202,32,14
+    PUSHBUTTON      "Dow&n",IDC_DOWN,444,265,32,14
+    CONTROL         "Show &report on completion",IDC_CHK_RESULTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,225,284,100,10
+END
+
+IDD_SPLASH DIALOGEX 0, 0, 271, 156
+STYLE DS_SETFONT | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         IDB_SPLASH,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE | SS_REALSIZEIMAGE,0,0,271,156,WS_EX_DLGMODALFRAME
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,2,0,0
+ PRODUCTVERSION 2,2,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Use MultiFilez to make changes in multiple files across multiple directories."
+            VALUE "CompanyName", "RandyRants.com"
+            VALUE "FileDescription", "MultiFilez"
+            VALUE "FileVersion", "2.2.0.0"
+            VALUE "InternalName", "MultiFilez"
+            VALUE "LegalCopyright", "Copyright (C) 2003-2020 Randy Rants LLC"
+            VALUE "OriginalFilename", "MultiFilez.EXE"
+            VALUE "ProductName", "MultiFilez Application"
+            VALUE "ProductVersion", "2.2.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LV_COMMANDS         BITMAP                  "res\\commands.bmp"
+
+IDB_LV_STATUS           BITMAP                  "res\\lv_statu.bmp"
+
+IDB_SPLASH              BITMAP                  "res\\splash.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MULTIFILEZ_DIALOG DLGINIT
+BEGIN
+    IDC_DO, 0x403, 8, 0
+0x6552, 0x6c70, 0x6361, 0x0065, 
+    IDC_DO, 0x403, 21, 0
+0x6441, 0x2064, 0x6f74, 0x7320, 0x6174, 0x7472, 0x6f20, 0x2066, 0x694c, 
+0x656e, "\000" 
+    IDC_DO, 0x403, 19, 0
+0x6441, 0x2064, 0x6f74, 0x6520, 0x646e, 0x6f20, 0x2066, 0x694c, 0x656e, 
+"\000" 
+    IDC_DO, 0x403, 21, 0
+0x6441, 0x2064, 0x6f74, 0x7320, 0x6174, 0x7472, 0x6f20, 0x2066, 0x6946, 
+0x656c, "\000" 
+    IDC_DO, 0x403, 19, 0
+0x6441, 0x2064, 0x6f74, 0x6520, 0x646e, 0x6f20, 0x2066, 0x6946, 0x656c, 
+"\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_LV_COMMANDS MENU
+BEGIN
+    POPUP "PlaceHolder"
+    BEGIN
+        MENUITEM "&Delete Selected Criteria",   IDM_LV_CMDDELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Move &Up",                    IDM_UP, GRAYED
+        MENUITEM "Move Do&wn",                  IDM_DOWN, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Select All Criteria",        IDM_LV_CMDSELECTALL
+        MENUITEM "Remove &All Criteria",        IDM_LV_CMDDELETEALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Help\tF1",                   IDM_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+IDR_LV_MENU MENU
+BEGIN
+    POPUP "PlaceHolder"
+    BEGIN
+        MENUITEM "&Open",                       IDM_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Remove Selected Files",      IDM_LV_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Select All Files",           IDM_LV_SELECTALL
+        MENUITEM "Remove &All Files",           IDM_LV_DELETEALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Help\tF1",                   IDM_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+IDR_MENU MENU
+BEGIN
+    POPUP "PlaceHolder"
+    BEGIN
+        MENUITEM "&Help\tF1",                   IDM_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+IDR_MAIN MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open",                       IDM_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Remove Selected Files",      IDM_LV_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Select All Files",           IDM_LV_SELECTALL
+        MENUITEM "Remove &All Files",           IDM_LV_DELETEALL
+    END
+    POPUP "&Criteria"
+    BEGIN
+        MENUITEM "&Remove Selected Criteria",   IDM_LV_CMDDELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Move &Up",                    IDM_UP, GRAYED
+        MENUITEM "Move Do&wn",                  IDM_DOWN, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Select All Criteria",        IDM_LV_CMDSELECTALL
+        MENUITEM "Remove &All Criteria",        IDM_LV_CMDDELETEALL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Index\tF1",                  IDM_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+    END
+
+    IDD_REGISTER, DIALOG
+    BEGIN
+    END
+
+    IDD_REPORT, DIALOG
+    BEGIN
+    END
+
+    IDD_MULTIFILEZ_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 311
+    END
+
+    IDD_SPLASH, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ABOUT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_REPORT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MultiFilez.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

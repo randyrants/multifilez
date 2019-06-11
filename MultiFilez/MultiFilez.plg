@@ -1,0 +1,90 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MultiFilez - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/MultiFilez.res" /d "NDEBUG" "C:\Projects\Home\MultiFilez\MultiFilez.rc"" 
+Creating temporary file "C:\Temp\RSP1FB.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/MultiFilez.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Projects\Home\MultiFilez\AboutDlg.cpp"
+"C:\Projects\Home\MultiFilez\DirTreeCtrl.cpp"
+"C:\Projects\Home\MultiFilez\DlgRegister.cpp"
+"C:\Projects\Home\MultiFilez\DlgResults.cpp"
+"C:\Projects\Home\MultiFilez\Encoding.cpp"
+"C:\Projects\Home\MultiFilez\MFZ_Commands.cpp"
+"C:\Projects\Home\MultiFilez\MFZ_FileFunctions.cpp"
+"C:\Projects\Home\MultiFilez\MFZ_Registry.cpp"
+"C:\Projects\Home\MultiFilez\MFZ_Reports.cpp"
+"C:\Projects\Home\MultiFilez\MFZ_Thread.cpp"
+"C:\Projects\Home\MultiFilez\MultiFilez.cpp"
+"C:\Projects\Home\MultiFilez\MultiFilezDlg.cpp"
+"C:\Projects\Home\MultiFilez\ParseString.cpp"
+"C:\Projects\Home\MultiFilez\RegistryKey.cpp"
+"C:\Projects\Home\MultiFilez\SortStringArray.cpp"
+"C:\Projects\Home\MultiFilez\SplashDlg.cpp"
+]
+Creating command line "cl.exe @C:\Temp\RSP1FB.tmp" 
+Creating temporary file "C:\Temp\RSP1FC.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/MultiFilez.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Projects\Home\MultiFilez\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Temp\RSP1FC.tmp" 
+Creating temporary file "C:\Temp\RSP1FD.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/MultiFilez.pdb" /machine:I386 /out:"Release/MultiFilez.exe" 
+.\Release\AboutDlg.obj
+.\Release\DirTreeCtrl.obj
+.\Release\DlgRegister.obj
+.\Release\DlgResults.obj
+.\Release\Encoding.obj
+.\Release\MFZ_Commands.obj
+.\Release\MFZ_FileFunctions.obj
+.\Release\MFZ_Registry.obj
+.\Release\MFZ_Reports.obj
+.\Release\MFZ_Thread.obj
+.\Release\MultiFilez.obj
+.\Release\MultiFilezDlg.obj
+.\Release\ParseString.obj
+.\Release\RegistryKey.obj
+.\Release\SortStringArray.obj
+.\Release\SplashDlg.obj
+.\Release\StdAfx.obj
+.\Release\MultiFilez.res
+]
+Creating command line "link.exe @C:\Temp\RSP1FD.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+AboutDlg.cpp
+DirTreeCtrl.cpp
+DlgRegister.cpp
+DlgResults.cpp
+Encoding.cpp
+MFZ_Commands.cpp
+MFZ_FileFunctions.cpp
+MFZ_Registry.cpp
+MFZ_Reports.cpp
+MFZ_Thread.cpp
+MultiFilez.cpp
+MultiFilezDlg.cpp
+ParseString.cpp
+RegistryKey.cpp
+SortStringArray.cpp
+SplashDlg.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+MultiFilez.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
