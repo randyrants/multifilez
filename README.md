@@ -13,7 +13,7 @@ That said, I did have to convert all of the tabs to spaces and I nearly vomited 
 This project was recompiled using Visual Studio 2019.
 
 ## Where can I get the compiled version?
-Click the Releases button in the header above or go to https://github.com/randyrants/multifilez/releases directly
+You can find this app in the Microsoft Store at https://www.microsoft.com/en-us/p/multifilez/9nxqx36f36n9 or you can grab a local install by clicking the Releases button in the header above which points to https://github.com/randyrants/multifilez/releases
 
 ## How do I use it?
 * Run the installer
