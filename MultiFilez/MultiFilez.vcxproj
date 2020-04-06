@@ -14,7 +14,7 @@
     <SccProjectName />
     <SccLocalPath />
     <Keyword>MFCProj</Keyword>
-    <ProjectGuid>{43C10391-0120-4A3F-ACE7-4AADD7A10664}</ProjectGuid>
+    <ProjectGuid>{DD2E51E6-58E7-7C72-C9CA-B70BFFBCAAF8}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -53,7 +53,6 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -67,6 +66,9 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <ObjectFileName>.\Release\</ObjectFileName>
       <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalUsingDirectories>C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\VC\vcpackages;C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.18362.0;C:\Program Files (x86)\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.UniversalApiContract\8.0.0.0;C:\Program Files (x86)\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.FoundationContract\3.0.0.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -93,11 +95,9 @@
     <ClCompile>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
       <Optimization>Disabled</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Debug\MultiFilez.pch</PrecompiledHeaderOutputFile>
@@ -133,7 +133,6 @@
     <ClCompile Include="AboutDlg.cpp" />
     <ClCompile Include="DirTreeCtrl.cpp" />
     <ClCompile Include="DlgResults.cpp" />
-    <ClCompile Include="Encoding.cpp" />
     <ClCompile Include="MFZ_Commands.cpp" />
     <ClCompile Include="MFZ_FileFunctions.cpp" />
     <ClCompile Include="MFZ_Registry.cpp" />
@@ -144,7 +143,6 @@
     <ClCompile Include="ParseString.cpp" />
     <ClCompile Include="RegistryKey.cpp" />
     <ClCompile Include="SortStringArray.cpp" />
-    <ClCompile Include="SplashDlg.cpp" />
     <ClCompile Include="StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
@@ -160,7 +158,6 @@
     <ClInclude Include="..\..\DevStudio\VC98\Include\BASETSD.H" />
     <ClInclude Include="DirTreeCtrl.h" />
     <ClInclude Include="DlgResults.h" />
-    <ClInclude Include="encoding.h" />
     <ClInclude Include="MFZ_Defines.h" />
     <ClInclude Include="MultiFilez.h" />
     <ClInclude Include="MultiFilezDlg.h" />
@@ -168,7 +165,6 @@
     <ClInclude Include="RegistryKey.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SortStringArray.h" />
-    <ClInclude Include="SplashDlg.h" />
     <ClInclude Include="StdAfx.h" />
   </ItemGroup>
   <ItemGroup>
@@ -178,8 +174,6 @@
     <CustomBuild Include="res\MultiFilez.rc2">
       <FileType>RC</FileType>
     </CustomBuild>
-    <CustomBuild Include="res\splash.bmp" />
-    <CustomBuild Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

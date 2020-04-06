@@ -3,142 +3,145 @@
 
 
 int FindAndReplace(CString strFile, CString strWith, CString strReplace) {
-  CFile cFile;
+    CFile cFile;
 
-  LPSTR sz;
-  int nFileSize;
-  int nSuccess = 0;
+    LPSTR sz;
+    int nFileSize;
+    int nSuccess = 0;
 
-  try {
-    CFileException e;
-    if (!cFile.Open(strFile, CFile::shareExclusive|CFile::modeReadWrite, &e)) {
-      switch (e.m_cause) {
-        case CFileException::fileNotFound:
-          return MFZ_NOTFOUND; //2
-          break;
-        case (5):
-          return MFZ_READONLY; //5
-          break;
-      }
+    try {
+        CFileException e;
+        if (!cFile.Open(strFile, CFile::shareExclusive | CFile::modeReadWrite, &e)) {
+            switch (e.m_cause) {
+            case CFileException::fileNotFound:
+                return MFZ_NOTFOUND; //2
+                break;
+            case (5):
+                return MFZ_READONLY; //5
+                break;
+            }
+        }
+
+        nFileSize = (int)cFile.GetLength();
+
+        sz = (LPSTR)LocalAlloc(LPTR, nFileSize + 2);
+        memset(sz, 0, sizeof(sz));
+
+        cFile.Read(sz, nFileSize);
+
+        CString str;
+        str = sz;
+        int nChanges = str.Replace(strReplace, strWith);
+
+        if (nChanges > 0) {
+            cFile.SetLength(0);
+            cFile.Write(str, str.GetLength());
+            nSuccess = 1;
+        }
+
+        cFile.Close();
     }
-
-    nFileSize = (int)cFile.GetLength();
-
-    sz = (LPSTR)LocalAlloc(LPTR, nFileSize + 2);
-    memset(sz, 0, sizeof(sz));
-
-    cFile.Read(sz, nFileSize);
-
-    CString str;
-    str = sz;
-    int nChanges = str.Replace(strReplace, strWith);
-
-    if (nChanges > 0) {
-      cFile.SetLength(0);
-      cFile.Write(str, str.GetLength());
-      nSuccess = 1;
+    catch (CFileException* cFileEx) {
+        CString str;
+        str.Format("An error has occurred while attempting file access on: %s", strFile);
+        MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
+        cFileEx->Delete();
     }
-    
-    cFile.Close();
-  }
-  catch (CFileException *cFileEx) {
-    CString str;
-	str.Format("An error has occurred while attempting file access on: %s (%s)", strFile, cFileEx->m_strFileName);
-    MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
-  }
-  return nSuccess;
+    return nSuccess;
 }
 
 int AddToLine(CString strFile, CString strWith, BOOL bStart) {
-  CStdioFile cFile;
+    CStdioFile cFile;
 
-  int nSuccess = 0;
+    int nSuccess = 0;
 
-  try {
-    if (!cFile.Open(strFile, CFile::shareExclusive|CFile::modeReadWrite|CFile::typeText)) {
-      CString str;
-      str.Format("An error has occurred while attempting file access on: %s", strFile);
-      MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
-      return nSuccess;
+    try {
+        if (!cFile.Open(strFile, CFile::shareExclusive | CFile::modeReadWrite | CFile::typeText)) {
+            CString str;
+            str.Format("An error has occurred while attempting file access on: %s", strFile);
+            MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
+            return nSuccess;
+        }
+
+        CString strLine;
+        CStringArray a_str;
+
+        while (cFile.ReadString(strLine)) {
+            if (bStart) {
+                strLine = strWith + strLine;
+            }
+            else {
+                strLine += strWith;
+            }
+            strLine += "\n"; //Required for the new line!
+            a_str.Add(strLine);
+        }
+
+        int nLines = a_str.GetSize();
+        if (nLines > 0) {
+            cFile.SetLength(0);
+            nSuccess = 1;
+        }
+        for (int n = 0; n < nLines; n++) {
+            cFile.WriteString(a_str[n]);
+        }
+
+        cFile.Close();
     }
-
-    CString strLine;
-    CStringArray a_str;
-
-    while (cFile.ReadString(strLine)) {
-      if (bStart) {
-        strLine = strWith + strLine;
-      }
-      else {
-        strLine += strWith;
-      }
-      strLine += "\n"; //Required for the new line!
-      a_str.Add(strLine);
+    catch (CFileException* cFileEx) {
+        CString str;
+        str.Format("An error has occurred while attempting file access on: %s", strFile);
+        MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
+        cFileEx->Delete();
     }
-
-    int nLines = a_str.GetSize();
-    if (nLines > 0) {
-      cFile.SetLength(0);
-      nSuccess = 1;
-    }
-    for (int n=0; n < nLines; n++) {
-      cFile.WriteString(a_str[n]);
-    }
-
-    cFile.Close();
-  }
-  catch (CFileException *cFileEx) {
-    CString str;
-	str.Format("An error has occurred while attempting file access on: %s (%s)", strFile, cFileEx->m_strFileName);
-	MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
-  }
-  return nSuccess;
+    return nSuccess;
 }
 
 int AddToFile(CString strFile, CString strWith, BOOL bStart) {
-  CFile cFile;
+    CFile cFile;
 
-  LPSTR sz;
-  int nFileSize;
-  int nSuccess = 0;
+    LPSTR sz;
+    int nFileSize;
+    int nSuccess = 0;
 
-  try {
-    if (!cFile.Open(strFile, CFile::shareExclusive|CFile::modeReadWrite)) {
-      CString str;
-      str.Format("An error has occurred while attempting file access on: %s", strFile);
-      MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
-      return nSuccess;
+    try {
+        if (!cFile.Open(strFile, CFile::shareExclusive | CFile::modeReadWrite)) {
+            CString str;
+            str.Format("An error has occurred while attempting file access on: %s", strFile);
+            MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
+            return nSuccess;
+        }
+
+        nFileSize = (int)cFile.GetLength();
+
+        sz = (LPSTR)LocalAlloc(LPTR, nFileSize + 2);
+        memset(sz, 0, sizeof(sz));
+
+        cFile.Read(sz, nFileSize);
+
+        CString str;
+        str = sz;
+        if (bStart) {
+            strWith += "\r\n"; //required for the new line!
+            str = strWith + str;
+        }
+        else {
+            strWith = "\r\n" + strWith; //required for the new line!
+            str += strWith;
+        }
+
+        cFile.SetLength(0);
+        cFile.Write(str, str.GetLength());
+        nSuccess = 1;
+
+        cFile.Close();
     }
-
-    nFileSize = (int)cFile.GetLength();
-
-    sz = (LPSTR)LocalAlloc(LPTR, nFileSize + 2);
-    memset(sz, 0, sizeof(sz));
-
-    cFile.Read(sz, nFileSize);
-
-    CString str;
-    str = sz;
-    if (bStart) {
-      strWith += "\r\n"; //required for the new line!
-      str = strWith + str;
+    catch (CFileException* cFileEx) {
+        CString str;
+        str.Format("An error has occurred while attempting file access on: %s", strFile);
+        MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
+        cFileEx->Delete();
     }
-    else {
-      strWith = "\r\n" + strWith; //required for the new line!
-      str += strWith;
-    }
-
-    cFile.SetLength(0);
-    cFile.Write(str, str.GetLength());
-    nSuccess = 1;
-    
-    cFile.Close();
-  }
-  catch (CFileException *cFileEx) {
-    CString str;
-	str.Format("An error has occurred while attempting file access on: %s (%s)", strFile, cFileEx->m_strFileName);
-	MessageBox(NULL, str, APP_NAME, MB_ICONSTOP);
-  }
-  return nSuccess;
+    return nSuccess;
 }
-          
+

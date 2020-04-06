@@ -9,48 +9,48 @@
 
 class CDirTreeCtrl : public CTreeCtrl
 {
-// Konstruktion
+    // Konstruktion
 public:
-	CDirTreeCtrl();
+    CDirTreeCtrl();
 
-// Attribute
-public:
-
-// Operationen
+    // Attribute
 public:
 
-// Überschreibungen
-	// Vom Klassen-Assistenten generierte virtuelle Funktionsüberschreibungen
-	//{{AFX_VIRTUAL(CDirTreeCtrl)
-	//}}AFX_VIRTUAL
-
-// Implementierung
+    // Operationen
 public:
-	BOOL SetSelPath( LPCTSTR strPath );
-	CString GetFullPath( HTREEITEM hItem );
-	LPCTSTR GetSubPath( LPCTSTR strPath );
-	BOOL DisplayTree( LPCTSTR strRoot, BOOL bFiles = FALSE );
-	virtual ~CDirTreeCtrl();
 
-	// Generierte Nachrichtenzuordnungsfunktionen
+    // Überschreibungen
+        // Vom Klassen-Assistenten generierte virtuelle Funktionsüberschreibungen
+        //{{AFX_VIRTUAL(CDirTreeCtrl)
+        //}}AFX_VIRTUAL
+
+    // Implementierung
+public:
+    BOOL SetSelPath(LPCTSTR strPath);
+    CString GetFullPath(HTREEITEM hItem);
+    LPCTSTR GetSubPath(LPCTSTR strPath);
+    BOOL DisplayTree(LPCTSTR strRoot, BOOL bFiles = FALSE);
+    virtual ~CDirTreeCtrl();
+
+    // Generierte Nachrichtenzuordnungsfunktionen
 protected:
-	BOOL IsValidPath( LPCTSTR strPath );
-	void ExpandItem( HTREEITEM hItem, UINT nCode );
-	HTREEITEM SearchSiblingItem( HTREEITEM hItem, LPCTSTR strText );
-	BOOL FindSubDir( LPCTSTR strPath );
-	HTREEITEM AddItem( HTREEITEM hParent, LPCTSTR strPath );
-	void DisplayPath( HTREEITEM hParent, LPCTSTR strPath );
-	BOOL DisplayDrives();
-	BOOL m_bFiles;
-	CString m_strError;
-	BOOL GetSysImgList();
-	CImageList m_imgList;
-	CString m_strRoot;
-	//{{AFX_MSG(CDirTreeCtrl)
-	afx_msg void OnItemexpanded(NMHDR* pNMHDR, LRESULT* pResult);
-	//}}AFX_MSG
+    BOOL IsValidPath(LPCTSTR strPath);
+    void ExpandItem(HTREEITEM hItem, UINT nCode);
+    HTREEITEM SearchSiblingItem(HTREEITEM hItem, LPCTSTR strText);
+    BOOL FindSubDir(LPCTSTR strPath);
+    HTREEITEM AddItem(HTREEITEM hParent, LPCTSTR strPath);
+    void DisplayPath(HTREEITEM hParent, LPCTSTR strPath);
+    BOOL DisplayDrives();
+    BOOL m_bFiles;
+    CString m_strError;
+    BOOL GetSysImgList();
+    CImageList m_imgList;
+    CString m_strRoot;
+    //{{AFX_MSG(CDirTreeCtrl)
+    afx_msg void OnItemexpanded(NMHDR* pNMHDR, LRESULT* pResult);
+    //}}AFX_MSG
 
-	DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

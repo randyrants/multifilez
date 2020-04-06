@@ -9,12 +9,12 @@
 #pragma once
 #endif // _MSC_VER >= 1000
 
-class CSortStringArray : public CStringArray  
+class CSortStringArray : public CStringArray
 {
 public:
-	void Sort();
-private: 
-	BOOL CompareAndSwap( int pos );
+    void Sort();
+private:
+    BOOL CompareAndSwap(int pos);
 
 };
 

@@ -12,38 +12,38 @@
 
 class CDlgResults : public CDialog
 {
-// Construction
+    // Construction
 public:
-	CDlgResults(CWnd* pParent = NULL);   // standard constructor
+    CDlgResults(CWnd* pParent = NULL);   // standard constructor
 
-  CStringArray ma_str;
-  CUIntArray ma_n;
+    CStringArray ma_str;
+    CUIntArray ma_n;
 
-  CImageList m_ilIcons;
+    CImageList m_ilIcons;
 
-// Dialog Data
-	//{{AFX_DATA(CDlgResults)
-	enum { IDD = IDD_REPORT };
-	CListCtrl	m_lvStatus;
-	//}}AFX_DATA
+    // Dialog Data
+        //{{AFX_DATA(CDlgResults)
+    enum { IDD = IDD_REPORT };
+    CListCtrl	m_lvStatus;
+    //}}AFX_DATA
 
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CDlgResults)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CDlgResults)
+protected:
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    //}}AFX_VIRTUAL
 
 // Implementation
 protected:
 
-	// Generated message map functions
-	//{{AFX_MSG(CDlgResults)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnDblclkResults(NMHDR* pNMHDR, LRESULT* pResult);
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    // Generated message map functions
+    //{{AFX_MSG(CDlgResults)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnDblclkResults(NMHDR* pNMHDR, LRESULT* pResult);
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

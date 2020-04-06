@@ -24,9 +24,6 @@
     <ClCompile Include="DlgResults.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Encoding.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MFZ_Commands.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -57,9 +54,6 @@
     <ClCompile Include="SortStringArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SplashDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -80,9 +74,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DlgResults.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="encoding.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MFZ_Defines.h">
@@ -106,9 +97,6 @@
     <ClInclude Include="SortStringArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SplashDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -126,9 +114,5 @@
     <CustomBuild Include="res\MultiFilez.rc2">
       <Filter>Resource Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="res\splash.bmp">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

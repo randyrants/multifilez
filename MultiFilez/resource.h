@@ -53,7 +53,6 @@
 #define IDM_LV_CMDDELETE                32774
 #define IDM_LV_CMDSELECTALL             32775
 #define IDM_LV_CMDDELETEALL             32776
-#define IDM_HELP                        32777
 #define IDM_ABOUT                       32778
 #define IDM_OPEN                        32779
 #define IDM_UP                          32780

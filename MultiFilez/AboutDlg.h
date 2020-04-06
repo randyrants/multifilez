@@ -12,37 +12,30 @@
 
 class CAboutDlg : public CDialog
 {
-// Construction
+    // Construction
 public:
-	CAboutDlg(CWnd* pParent = NULL);   // standard constructor
+    CAboutDlg(CWnd* pParent = NULL);   // standard constructor
 
-  void UpdateAllData();
 // Dialog Data
-	//{{AFX_DATA(CAboutDlg)
-	enum { IDD = IDD_ABOUT };
-	CStatic	m_lblRegistered;
-	CStatic	m_lblVersion;
-	CStatic	m_lblInfo;
-	CButton	m_btnRegExplorer;
-	//}}AFX_DATA
+    //{{AFX_DATA(CAboutDlg)
+    enum { IDD = IDD_ABOUT };
+    //}}AFX_DATA
 
 
 // Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CAboutDlg)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CAboutDlg)
+protected:
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    //}}AFX_VIRTUAL
 
 // Implementation
 protected:
 
-	// Generated message map functions
-	//{{AFX_MSG(CAboutDlg)
-	afx_msg void OnRegExplorer();
-	virtual BOOL OnInitDialog();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    // Generated message map functions
+    //{{AFX_MSG(CAboutDlg)
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

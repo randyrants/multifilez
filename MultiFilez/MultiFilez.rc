@@ -80,7 +80,7 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,153,81,50,14
     ICON            IDR_MAINFRAME,IDC_STATIC,4,4,20,20
     LTEXT           "MultiFilez version 2.2",IDC_STATIC,29,5,89,8
-    LTEXT           "© 2003-2020 RandyRants LLC",IDC_STATIC,29,15,100,8
+    LTEXT           "© 2003-2020 RandyRants.com",IDC_STATIC,29,15,100,8
     GROUPBOX        "License information...",IDC_STATIC,6,29,198,48
     CTEXT           "This software is ""Donation-Ware""",IDC_VERSION,12,38,185,9,SS_SUNKEN
     LTEXT           "You may use this software for as long as you like, free of charge - donations are gladly accepted to keep the project going. ",IDC_INFO,12,49,185,25,NOT WS_GROUP
@@ -108,9 +108,9 @@ CAPTION "MultiFilez - Results"
 FONT 9, "Segoe UI", 400, 0, 0x0
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,222,211,50,14
-    ICON            IDR_MAINFRAME,IDC_STATIC,4,4,20,20
+    ICON            IDR_MAINFRAME,IDC_STATIC,4,4,18,17
     LTEXT           "MultiFilez - Reports",IDC_STATIC,29,5,86,8
-    LTEXT           "© 2003-2020 RandyRants LLC",IDC_STATIC,29,15,137,8
+    LTEXT           "© 2003-2010 RandyRants.com",IDC_STATIC,29,15,137,8
     GROUPBOX        "Results...",IDC_STATIC,6,27,266,180
     CONTROL         "List1",IDC_RESULTS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_TABSTOP,12,38,253,162,WS_EX_CLIENTEDGE
 END
@@ -190,7 +190,7 @@ BEGIN
             VALUE "FileDescription", "MultiFilez"
             VALUE "FileVersion", "2.2.0.0"
             VALUE "InternalName", "MultiFilez"
-            VALUE "LegalCopyright", "Copyright (C) 2003-2020 Randy Rants LLC"
+            VALUE "LegalCopyright", "Copyright (C) 2003-2020 RandyRants.com"
             VALUE "OriginalFilename", "MultiFilez.EXE"
             VALUE "ProductName", "MultiFilez Application"
             VALUE "ProductVersion", "2.2.0.0"
@@ -211,8 +211,6 @@ END
 IDB_LV_COMMANDS         BITMAP                  "res\\commands.bmp"
 
 IDB_LV_STATUS           BITMAP                  "res\\lv_statu.bmp"
-
-IDB_SPLASH              BITMAP                  "res\\splash.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -257,8 +255,6 @@ BEGIN
         MENUITEM "&Select All Criteria",        IDM_LV_CMDSELECTALL
         MENUITEM "Remove &All Criteria",        IDM_LV_CMDDELETEALL
         MENUITEM SEPARATOR
-        MENUITEM "&Help\tF1",                   IDM_HELP
-        MENUITEM SEPARATOR
         MENUITEM "&About...",                   IDM_ABOUT
     END
 END
@@ -274,8 +270,6 @@ BEGIN
         MENUITEM "&Select All Files",           IDM_LV_SELECTALL
         MENUITEM "Remove &All Files",           IDM_LV_DELETEALL
         MENUITEM SEPARATOR
-        MENUITEM "&Help\tF1",                   IDM_HELP
-        MENUITEM SEPARATOR
         MENUITEM "&About...",                   IDM_ABOUT
     END
 END
@@ -284,8 +278,6 @@ IDR_MENU MENU
 BEGIN
     POPUP "PlaceHolder"
     BEGIN
-        MENUITEM "&Help\tF1",                   IDM_HELP
-        MENUITEM SEPARATOR
         MENUITEM "&About...",                   IDM_ABOUT
     END
 END
@@ -313,8 +305,6 @@ BEGIN
     END
     POPUP "&Help"
     BEGIN
-        MENUITEM "&Index\tF1",                  IDM_HELP
-        MENUITEM SEPARATOR
         MENUITEM "&About...",                   IDM_ABOUT
     END
 END
@@ -358,11 +348,6 @@ END
 //
 
 IDD_ABOUT AFX_DIALOG_LAYOUT
-BEGIN
-    0
-END
-
-IDD_REPORT AFX_DIALOG_LAYOUT
 BEGIN
     0
 END
